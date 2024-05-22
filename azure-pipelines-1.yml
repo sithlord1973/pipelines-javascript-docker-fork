@@ -1,3 +1,9 @@
+trigger:
+- main
+
+resources:
+- repo: self
+
 - task: AzireCLI@2
   displayname: Azure CLI
   inputs:
