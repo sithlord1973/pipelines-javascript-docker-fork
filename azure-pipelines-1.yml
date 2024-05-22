@@ -1,16 +1,9 @@
-jobs:
-- job: Linux
-  pool:
-    vmImage: 'ubuntu-latest'
-  steps:
-  - script: echo hello from Linux
-- job: macOS
-  pool:
-    vmImage: 'macOS-latest'
-  steps:
-  - script: echo hello from macOS
-- job: Windows
-  pool:
-    vmImage: 'windows-latest'
-  steps:
-  - script: echo hello from Windows
+- task: AzireCLI@2
+  displayname: Azure CLI
+  inputs:
+    azureSubscription: fcodocker
+    scriptType: ps
+    scriptLocation: inlineScript
+    inlineScript: |
+      az --version
+      az account show
